@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    'zoes-cakes.herokuapp.com/',
+    'zoes-cakes.herokuapp.com',
 
 ]
 
