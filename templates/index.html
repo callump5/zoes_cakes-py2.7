@@ -1,0 +1,39 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Pacifico|Source+Sans+Pro:700|Work+Sans" rel="stylesheet">
+</head>
+
+
+<body>
+
+    <div id="nav">
+        <div id="navbar">
+            <a id="nav-title">ZOE'S CAKES</a>
+            <ul id="nav-list">
+                <li><a>About</a></li>
+                <li><a>Cakes</a></li>
+                <li><a>Shops</a></li>
+                <li><a>Cakes</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="page">
+
+        {% block content %}
+
+        {% endblock %}
+
+    </div>
+
+</body>
+
+</html>

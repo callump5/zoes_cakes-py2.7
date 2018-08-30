@@ -1,0 +1,14 @@
+
+Django
+gunicorn
+Jinja2
+MarkupSafe
+mock
+pbr
+pytz
+six
+virtualenv
+Werkzeug
+whitenoise
+dj-database-url
+django-storages
