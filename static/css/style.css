@@ -1,93 +1,205 @@
-/*
-    font-family: 'Pacifico', cursive;
+/* CSS Contents:
+    1 - Root Variables
+    2 - Fonts
+    3 - Nav
+    4 - Page
+    5 - Home Image
 
-    font-family: 'Work Sans', sans-serif;
-
-    font-family: 'Montserrat', sans-serif;
-
-    font-family: 'Source Sans Pro', sans-serif;
+      - Link Animation
 */
 
-:root{
-    --nav-padding: 20px;
-    --page-height: calc(100vh - 88px);
-    --theme-color-1: #ff97cc;
-    --font-s: 1.5em
-
-}
-
-h1, a, button {
-    font-size: var(--font-s);
-    font-family: 'Work Sans', sans-serif;
-    color: white;
-}
-
-body {
-}
-
-#nav {
-    background-color: var(--theme-color-1);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--nav-padding) 0;
-}
-
-#navbar {
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-#nav-title{
-    font-weight: bold;
-    width: 100px;
-    text-align: center;
-}
-#nav-list{
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-}
-#nav-list a {
-    margin: 0 10px;
-}
 
 
-#page {
-    height: var(--page-height);
-    width: 80vw;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+/* 1 - Root Variables */
+    :root{
+        --nav-padding: 20px;
+        --nav-width: 80%;
+        --page-height: calc(100vh - 88px);
+        --theme-color-1: #ff97cc;
+        --font-s: 26px
+
+    }
+
+
+/* 2 - Fonts */
+    h1, a, button {
+        font-size: var(--font-s);
+        font-family: 'Work Sans', sans-serif;
+
+    }
+
+
+/* 3 - Nav */
+    #nav {
+        background-color: var(--theme-color-1);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--nav-padding) 0;
+        z-index: 100;
+        color: white;
+    }
+
+    #navbar {
+        width: var(--nav-width);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #nav-title{
+        font-weight: bold;
+        width: fit-content;
+        text-align: center;
+    }
+
+    #nav-list{
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+    }
+
+    #nav-list a {
+        margin: 0 10px;
+    }
+
+
+/* 4 - Page */
+
+    body {
+         overflow-x: hidden;
+    }
+    #page {
+        min-height: var(--page-height);
+        width: var(--nav-width);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .page-title {
+
+        margin-bottom: 25px;
+    }
+
+
+/* 5 - Home Image */
+    #home-image {
+        height: 80vh;
+        width: 100vw;
+        background-image: url("/static/img/almond-assorted-bake-1028720.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 100% 50%;
+        margin-bottom: 50px;
+    }
+
+    #home-image div {
+        width: inherit;
+        height: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+
+    #home-image div div {
+        width: var(--nav-width);
+        margin: 0 auto;
+    }
+
+    #img-btn {
+        width:  content-box;
+        background-color: var(--theme-color-1);
+        padding: 10px;
+        border: none;
+        margin-bottom: 100px;
+    }
+
+
+    /* 6 - Bake Slide */
+
+    #bake-slide {
+        height: 225px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        overflow-x: auto;
+    }
+
+    .bake-slide {
+        height: 200px;
+        width: 200px;
+        background-color: var(--theme-color-1);
+    margin: 5px;
+    }
+    .bake-slide img {
+        width: 200px;
+        height: 150px;
+    }
+
+    .bake-slide h1 {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .scrollbar {
+    background-color: #F5F5F5;
+    float: left;
+    height: 300px;
+    margin-bottom: 25px;
+    margin-left: 22px;
+    margin-top: 40px;
+    width: 65px;
+    overflow-y: scroll;
 }
 
-#home-image {
-    position: relative;
-    background-image: url("/static/img/cupcakes.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    height: 70vh;
-    width: 80vw;
-}
-#img-btn {
-    position: absolute;
-    bottom: 50px;
-    left: 50px;
-    background-color: var(--theme-color-1);
-    padding: 10px;
-    border: none;
+.force-overflow {
+    min-height: 450px;
 }
 
-#img-btn a
-{
-    color: white;
-     background: url("/static/img/cupcakes.png") repeat;
-    -webkit-background-clip: text;
 
-}
+
+
+
+
+
+
+
+/*   - Link Animation */
+
+    a {
+        text-decoration: none;
+    }
+
+    .link{
+        position: relative;
+        color: white;
+    }
+
+    .link:after{
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 3px;
+        display: block;
+        margin-top: 5px;
+        right: 0;
+        background: #fff;
+        transition: width .2s ease;
+        -webkit-transition: width .2s ease;
+    }
+
+    .link:hover:after{
+        width: 100%;
+        left: 0;
+        background: #fff;
+    }
