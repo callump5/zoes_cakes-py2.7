@@ -13,16 +13,26 @@
 
 /* 1 - Root Variables */
     :root{
-        --nav-padding: 20px;
+        --nav-padding: 15px;
         --nav-width: 80%;
         --page-height: calc(100vh - 88px);
         --theme-color-1: #ff97cc;
         --font-s: 26px
-
     }
 
 
 /* 2 - Fonts */
+
+    @font-face {
+        font-family: myFirstFont;
+        src: url('/static/fonts/lalezar/Lalezar-Regular.otf');
+    }
+
+    /*
+        font-family: 'Work Sans', sans-serif;
+        font-family: myFirstFont, sans-serif;
+    */
+
     h1, a, button {
         font-size: var(--font-s);
         font-family: 'Work Sans', sans-serif;
@@ -37,7 +47,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        padding: var(--nav-padding) 0;
+        padding: 10px 0;
         z-index: 100;
         color: white;
     }
@@ -53,8 +63,23 @@
 
     #nav-title{
         font-weight: bold;
-        width: fit-content;
         text-align: center;
+        font-family: myFirstFont, sans-serif;
+        color: black !important;
+    }
+
+    #nav-title img {
+        height: 60px;
+        width: auto;
+        margin-top: 6px;
+    }
+
+    #line-1 {
+        font-size: 1.75em;
+    }
+
+    #line-2 {
+        font-size: 1.3em;
     }
 
     #nav-list{
@@ -66,7 +91,6 @@
     #nav-list a {
         margin: 0 10px;
     }
-
 
 /* 4 - Page */
 
@@ -84,8 +108,9 @@
     }
 
     .page-title {
-
+        font-size: 2.5em;
         margin-bottom: 25px;
+        font-family: myFirstFont, sans-serif;
     }
 
 
@@ -133,13 +158,14 @@
         justify-content: center;
         align-items: center;
         overflow-x: auto;
+        margin: 10px 10px 25px 10px;
     }
 
     .bake-slide {
         height: 200px;
         width: 200px;
         background-color: var(--theme-color-1);
-    margin: 5px;
+        margin: 5px;
     }
     .bake-slide img {
         width: 200px;
@@ -149,6 +175,7 @@
     .bake-slide h1 {
         text-align: center;
         padding: 10px;
+        font-family: myFirstFont, sans-serif;
     }
 
     .scrollbar {
