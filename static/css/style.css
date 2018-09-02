@@ -8,9 +8,6 @@
       - Link Animation
 */
 
-
-
-
 /* 1 - Root Variables */
     :root{
         --nav-padding: 15px;
@@ -33,7 +30,7 @@
         font-family: myFirstFont, sans-serif;
     */
 
-    h1, a, button {
+    h1, a, p, button {
         font-size: var(--font-s);
         font-family: 'Work Sans', sans-serif;
 
@@ -118,10 +115,10 @@
     #home-image {
         height: 80vh;
         width: 100vw;
-        background-image: url("/static/img/almond-assorted-bake-1028720.jpg");
+        background-image: url("/static/img/40561786_743518755990400_4098802932567244800_n.jpg");
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: 100% 50%;
+        background-position: 100% 100%;
         margin-bottom: 50px;
     }
 
@@ -151,13 +148,12 @@
     /* 6 - Bake Slide */
 
     #bake-slide {
-        height: 225px;
         width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        overflow-x: auto;
+        flex-wrap: wrap;
         margin: 10px 10px 25px 10px;
     }
 
@@ -178,25 +174,32 @@
         font-family: myFirstFont, sans-serif;
     }
 
-    .scrollbar {
-    background-color: #F5F5F5;
-    float: left;
-    height: 300px;
-    margin-bottom: 25px;
-    margin-left: 22px;
-    margin-top: 40px;
-    width: 65px;
-    overflow-y: scroll;
-}
 
-.force-overflow {
-    min-height: 450px;
-}
+    .force-overflow {
+        min-height: 450px;
+    }
 
+    /* 7 - Blog Post */
 
+    #recent-posts {
+        height: 500px;
+        margin: 20px 0 ;
+    }
 
+    .blog-post {
+        display: flex;
+        flex-direction: row;
+    }
+    .blog-text {
+        display: flex;
+        flex-direction: column;
+    }
 
-
+    .blog-img {
+        height: 300px;
+        width: auto;
+        margin-right: 20px;
+    }
 
 
 
