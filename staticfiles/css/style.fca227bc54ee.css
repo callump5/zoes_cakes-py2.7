@@ -22,7 +22,7 @@
 
     @font-face {
         font-family: myFirstFont;
-        src: url('/static/fonts/lalezar/Lalezar-Regular.otf');
+        src: url("/static/fonts/lalezar/Lalezar-Regular.085f8588fcc5.otf");
     }
 
     /*
@@ -115,7 +115,7 @@
     #home-image {
         height: 80vh;
         width: 100vw;
-        background-image: url("/static/img/40561786_743518755990400_4098802932567244800_n.jpg");
+        background-image: url("/static/img/40561786_743518755990400_4098802932567244800_n.2fe0e089232c.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: 100% 100%;
