@@ -18,5 +18,5 @@ from django.contrib import admin
 from home.views import get_home
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', get_home)
+    url(r'', get_home),
 ]
