@@ -71,7 +71,7 @@ def filterwarnings(action, message="", category=Warning, module="", lineno=0,
     'action' -- one of "error", "ignore", "always", "default", "module",
                 or "once"
     'message' -- a regex that the warning message must match
-    'category' -- a class that the warning must be a subclass of
+    'categorys' -- a class that the warning must be a subclass of
     'module' -- a regex that the module name must match
     'lineno' -- an integer line number, 0 matches all warnings
     'append' -- if true, append to the list of filters
@@ -81,8 +81,8 @@ def filterwarnings(action, message="", category=Warning, module="", lineno=0,
                       "once"), "invalid action: %r" % (action,)
     assert isinstance(message, basestring), "message must be a string"
     assert isinstance(category, (type, types.ClassType)), \
-           "category must be a class"
-    assert issubclass(category, Warning), "category must be a Warning subclass"
+           "categorys must be a class"
+    assert issubclass(category, Warning), "categorys must be a Warning subclass"
     assert isinstance(module, basestring), "module must be a string"
     assert isinstance(lineno, int) and lineno >= 0, \
            "lineno must be an int >= 0"
@@ -99,7 +99,7 @@ def simplefilter(action, category=Warning, lineno=0, append=0):
     A simple filter matches all modules and messages.
     'action' -- one of "error", "ignore", "always", "default", "module",
                 or "once"
-    'category' -- a class that the warning must be a subclass of
+    'categorys' -- a class that the warning must be a subclass of
     'lineno' -- an integer line number, 0 matches all warnings
     'append' -- if true, append to the list of filters
     """
@@ -175,7 +175,7 @@ def _getcategory(category):
         try:
             cat = eval(category)
         except NameError:
-            raise _OptionError("unknown warning category: %r" % (category,))
+            raise _OptionError("unknown warning categorys: %r" % (category,))
     else:
         i = category.rfind(".")
         module = category[:i]
@@ -187,9 +187,9 @@ def _getcategory(category):
         try:
             cat = getattr(m, klass)
         except AttributeError:
-            raise _OptionError("unknown warning category: %r" % (category,))
+            raise _OptionError("unknown warning categorys: %r" % (category,))
     if not issubclass(cat, Warning):
-        raise _OptionError("invalid warning category: %r" % (category,))
+        raise _OptionError("invalid warning categorys: %r" % (category,))
     return cat
 
 
@@ -199,7 +199,7 @@ def warn(message, category=None, stacklevel=1):
     # Check if message is already a Warning object
     if isinstance(message, Warning):
         category = message.__class__
-    # Check category argument
+    # Check categorys argument
     if category is None:
         category = UserWarning
     assert issubclass(category, Warning)
@@ -304,7 +304,7 @@ class WarningMessage(object):
 
     """Holds the result of a single showwarning() call."""
 
-    _WARNING_DETAILS = ("message", "category", "filename", "lineno", "file",
+    _WARNING_DETAILS = ("message", "categorys", "filename", "lineno", "file",
                         "line")
 
     def __init__(self, message, category, filename, lineno, file=None,
@@ -315,7 +315,7 @@ class WarningMessage(object):
         self._category_name = category.__name__ if category else None
 
     def __str__(self):
-        return ("{message : %r, category : %r, filename : %r, lineno : %s, "
+        return ("{message : %r, categorys : %r, filename : %r, lineno : %s, "
                     "line : %r}" % (self.message, self._category_name,
                                     self.filename, self.lineno, self.line))
 
@@ -385,7 +385,7 @@ class catch_warnings(object):
 # The components of the 5-tuple are:
 # - an action: error, ignore, always, default, module, or once
 # - a compiled regex that must match the warning message
-# - a class representing the warning category
+# - a class representing the warning categorys
 # - a compiled regex that must match the module that is being warned
 # - a line number for the line being warning, or 0 to mean any line
 # If either if the compiled regexs are None, match anything.

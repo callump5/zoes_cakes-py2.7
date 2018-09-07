@@ -547,10 +547,10 @@ def getdefaultlocale(envvars=('LC_ALL', 'LC_CTYPE', 'LANG', 'LANGUAGE')):
 
 def getlocale(category=LC_CTYPE):
 
-    """ Returns the current setting for the given locale category as
+    """ Returns the current setting for the given locale categorys as
         tuple (language code, encoding).
 
-        category may be one of the LC_* value except LC_ALL. It
+        categorys may be one of the LC_* value except LC_ALL. It
         defaults to LC_CTYPE.
 
         Except for the code 'C', the language code corresponds to RFC
@@ -560,19 +560,19 @@ def getlocale(category=LC_CTYPE):
     """
     localename = _setlocale(category)
     if category == LC_ALL and ';' in localename:
-        raise TypeError, 'category LC_ALL is not supported'
+        raise TypeError, 'categorys LC_ALL is not supported'
     return _parse_localename(localename)
 
 def setlocale(category, locale=None):
 
-    """ Set the locale for the given category.  The locale can be
+    """ Set the locale for the given categorys.  The locale can be
         a string, an iterable of two strings (language code and encoding),
         or None.
 
         Iterables are converted to strings using the locale aliasing
         engine.  Locale strings are passed directly to the C lib.
 
-        category may be given as one of the LC_* values.
+        categorys may be given as one of the LC_* values.
 
     """
     if locale and not isinstance(locale, (_str, _unicode)):
@@ -582,10 +582,10 @@ def setlocale(category, locale=None):
 
 def resetlocale(category=LC_ALL):
 
-    """ Sets the locale for category to the default setting.
+    """ Sets the locale for categorys to the default setting.
 
         The default setting is determined by calling
-        getdefaultlocale(). category defaults to LC_ALL.
+        getdefaultlocale(). categorys defaults to LC_ALL.
 
     """
     _setlocale(category, _build_localename(getdefaultlocale()))

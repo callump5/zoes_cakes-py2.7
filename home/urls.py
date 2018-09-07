@@ -13,14 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
-from django.contrib import admin
-from home.views import get_home
+from django.conf.urls import url
+from views import get_cakes_in_categorys
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^$', get_home),
-
-
-    url(r'^', include('home.urls')),
-
+    url(r'^categorys/(?P<slug>[-\w]+)/(?P<pk>\d+)/', get_cakes_in_categorys, name='categorys')
 ]
+
