@@ -151,10 +151,11 @@
     #home-image {
         height: 80vh;
         width: 100vw;
-        background-image: url("/static/img/40561786_743518755990400_4098802932567244800_n.jpg");
+        background-image: url("/static/img/backgrounds/background2.jpeg");
         background-repeat: no-repeat;
-        background-size: cover;
-        background-position: 100% 100%;
+        background-size: 100% auto;
+        background-position: bottom;
+        background-position-y: -400px ;
     }
 
     #home-image div {
