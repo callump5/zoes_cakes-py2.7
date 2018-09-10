@@ -1,6 +1,15 @@
 {% extends 'index.html' %}
 
-{% block 'content' %}
-<h1>wig</h1>
 
+{% block content %}
+
+    
+        {% for item in items %}
+
+            <div class="bake-slide">
+                <img src="{{ item.image.url  }}">
+                <a class="link" href="/">{{ item.name }}</a>
+            </div>
+        {% endfor %}
+        
 {% endblock %}

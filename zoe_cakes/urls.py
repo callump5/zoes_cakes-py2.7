@@ -15,12 +15,24 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.views.static import serve
+
+import new_settings.base
+
+
 from home.views import get_home
+
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', get_home),
 
+    url(r'', include('home.urls')),
 
-    url(r'^', include('home.urls')),
+    # Static
+    url(r'^static/(?P<path>.*)$', serve, {'document_root': new_settings.base.STATIC_ROOT}),
+    # Media Root
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': new_settings.base.MEDIA_ROOT}),
+
 
 ]

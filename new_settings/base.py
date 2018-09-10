@@ -28,6 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'zoes-cakes.herokuapp.com',
+    'www.zoes-cakes.co.uk',
+    'zoes-cakes.co.uk',
 
 ]
 
@@ -42,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -121,6 +124,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') ##specify static root
 
 STATIC_URL = '/static/'
 
-
-
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+MEDIA_URL = '/media/'

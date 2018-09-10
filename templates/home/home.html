@@ -11,32 +11,33 @@
         </div>
     </div>
 
-    <h1 class="page-title">Welcome to Zoe's Cakes!</h1>
-
-    <div id="bake-slide">
-
-    {% for item in category %}
-        <div class="bake-slide">
-            <img src="{{ item.image.url  }}">
-            <a class="link" href="{% url 'categorys' item.slug item.pk %}">{{ item.name }}</a>
+    <section id="bake-slide">
+        <h1 class="section-title">Check Out Our Cakes! </h1>
+        <div>
+            {% for item in category %}
+                <div class="bake-slide">
+                    <img src="{{ item.image.url  }}">
+                    <div>
+                        <a href="category/{{ item.slug }}" class="link">{{ item.name }}</a>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
-    {% endfor %}
+    </section>
 
-    </div>
-
-    <div id="recent-posts">
-
-        <div class="blog-post">
-            <img class="blog-img" src="/static/img/cake.jpg">
-            <div class="blog-text">
-
-                <h1 class="page-title">Check out my recent Cake!</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae cupiditate deserunt earum ex iure laborum molestiae natus officiis pariatur sapiente? Ducimus laudantium maxime modi nisi nulla perspiciatis quod rem reprehenderit.</p>
-
-            </div>
-
+    <section id="recent-posts">
+        <h1 class="section-title">Recent Blog Posts</h1>
+        <div>
+            {% for post in posts  %}
+                <article class="blog-post">
+                    <img class="blog-img" src="{{ post.image.url }}">
+                    <div class="blog-text">
+                        <h1 class="section-title">{{ post.title }}</h1>
+                        <p>{{ post.post }}</p>
+                    </div>
+                </article>
+            {% endfor %}
         </div>
-
-    </div>
+    </section>
 
 {% endblock %}
