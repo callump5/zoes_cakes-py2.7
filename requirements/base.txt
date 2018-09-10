@@ -11,3 +11,4 @@ Werkzeug
 whitenoise
 dj-database-url
 django-storages
+Pillow
