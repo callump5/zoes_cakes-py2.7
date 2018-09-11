@@ -3,15 +3,14 @@
 
 {% block content %}
 
-    <div id="home-image">
-        <div>
-            <div>
-                <a id="img-btn" class="link">Interested?</a>
-            </div>
+    <div class="parallax parallax-1">
+        <div class="parallax-content">
+            <h1>Welcome to Zoe's Cakes</h1>
+            <p>Scroll down to find see what mouth watering pasteries lay ahead!</p>
         </div>
     </div>
 
-    <section id="bake-slide">
+    <section id="bake-slide" class="gradient-3">
         <h1 class="section-title">Check Out Our Cakes! </h1>
         <div>
             {% for item in category %}
@@ -25,15 +24,17 @@
         </div>
     </section>
 
-    <section id="recent-posts">
-        <h1 class="section-title">Recent Blog Posts</h1>
-        <div>
+
+    <section class="parallax parallax-2">
+        <div id="recent-posts">
             {% for post in posts  %}
-                <article class="blog-post">
-                    <img class="blog-img" src="{{ post.image.url }}">
-                    <div class="blog-text">
-                        <h1 class="section-title">{{ post.title }}</h1>
-                        <p>{{ post.post }}</p>
+                <article class="col-sm-6 blog-post ">
+                    <div>
+                        <img class="blog-post-img" src="{{ post.image.url }}">
+                        <div class="blog-post-content">
+                            <h1 class="blog-post-title">{{ post.title }}</h1>
+                            <p>{{ post.post }}</p>
+                        </div>
                     </div>
                 </article>
             {% endfor %}
