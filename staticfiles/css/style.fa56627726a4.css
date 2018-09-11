@@ -185,18 +185,18 @@
     }
 
     .parallax-1 {
-        background-image: url("/static/img/backgrounds/pexels-photo-4.jpg");
+        background-image: url("/static/img/backgrounds/pexels-photo-4.ed79ac995a3c.jpg");
 
     }
 
     .parallax-2 {
-        background-image: url("/static/img/backgrounds/pexels-photo-2.jpeg");
+        background-image: url("/static/img/backgrounds/pexels-photo-2.3dbea37d6ada.jpeg");
     }
 
     .parallax-posts {
         height: 200px;
 
-        background-image: url("/static/img/backgrounds/pexels-photo-1.jpeg");
+        background-image: url("/static/img/backgrounds/pexels-photo-1.6b3b83543608.jpeg");
 
     }
 

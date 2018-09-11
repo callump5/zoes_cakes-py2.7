@@ -8,7 +8,7 @@ from blog.models import BlogPost
 
 def get_home(request):
     category = Category.objects.all()
-    posts = BlogPost.objects.all()[0:5]
+    posts = BlogPost.objects.all()[0:2]
     return render(request, 'home/home.html', {'category': category,
                                               'posts': posts})
 
