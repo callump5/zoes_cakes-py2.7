@@ -17,7 +17,7 @@
     :root{
         --nav-padding: 15px;
         --nav-width: 80%;
-        --page-height: calc(100vh - 88px);
+        --page-height: calc(100vh - 100px);
         --theme-color-1: #90c5f0;
         --font-s: 26px;
         --section-color-1: rgb(20, 44, 71);
@@ -43,7 +43,7 @@
         font-family: 'Pacifico', cursive;
     }
 
-    .bake-slide a {
+    .bake-slide a, .item-text a {
         font-family: 'Dancing Script', cursive;
     }
 
@@ -57,9 +57,9 @@
 
     .gradient-1 {
         background: rgb(37,141,200); /* Old browsers */
-        background: -moz-linear-gradient(135deg, #90c5f0 40%, #9633f0 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(135deg, #90c5f0 40%, #9633f0 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(135deg, #90c5f0 40%, #9633f0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        background: -moz-linear-gradient(-135deg, #90c5f0 40%, #ffffff 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(-135deg, #90c5f0 40%, #ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(-135deg, #90c5f0 40%, #ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#258dc8', endColorstr='#258dc8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     }
 
@@ -78,6 +78,12 @@
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     }
 
+    .gradient-4 {
+        background: -moz-linear-gradient(135deg, #90c5f0 0%, rgb(194, 182, 240) 100%);/* FF3.6-15 */
+        background: -webkit-linear-gradient(135deg, #90c5f0 0%, rgb(194, 182, 240) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, #90c5f0 0%, rgb(212, 192, 217) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    }
 
 
 
@@ -140,10 +146,7 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-
-
     }
-
 
 /* - Parallax */
 
@@ -195,18 +198,17 @@
 
     .parallax-posts {
         height: 200px;
-
         background-image: url("/static/img/backgrounds/pexels-photo-1.jpeg");
-
     }
 
-
     .blend {
-
         background-color: var(--blend-color);
         background-blend-mode: multiply;
     }
 
+    .page {
+        height: var(--page-height);
+    }
 
 
 
@@ -220,8 +222,6 @@
         margin: 20px 0 ;
         font-size: 30px;
     }
-
-
 
 
     /* 7 - Bake Slide */
@@ -330,6 +330,62 @@
     width: 200px;
     float: right;
     margin-left: 25px;
+}
+
+
+/* - Category */
+
+#category {
+    width: 100%;
+    background-image: url("/static/img/backgrounds/pexels-photo-1.jpeg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#category > div {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.category-item {
+    height: 260px;
+    width: 210px;
+
+    display: flex;
+    flex-direction: column;
+
+    margin: 10px
+
+}
+.item-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.category-item img {
+    height: 210px;
+    width: 210px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.category-item a {
+    font-size: 32px;
+    padding: 10px;
 }
 
 

@@ -3,13 +3,19 @@
 
 {% block content %}
 
-    
-        {% for item in items %}
+    <section id="category" class="page blend">
+        <div>
+            {% for item in items %}
+                <article class="category-item">
+                    <img src="{{ item.image.url  }}">
+                    <div class="item-text gradient-4">
+                        <a class="link" href="/">{{ item.name }}</a>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    </section>
 
-            <div class="bake-slide">
-                <img src="{{ item.image.url  }}">
-                <a class="link" href="/">{{ item.name }}</a>
-            </div>
-        {% endfor %}
-        
+
+
 {% endblock %}
