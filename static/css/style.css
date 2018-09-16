@@ -227,17 +227,12 @@
     margin: 0 auto;
 }
 
-#category, #category-items{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-#category-images {
+.category-images {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;+++
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .category-item {
