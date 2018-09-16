@@ -1,0 +1,50 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/lib/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Handlee|Pacifico|Rochester" rel="stylesheet">
+
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+</head>
+
+
+<body>
+
+    <div id="nav" class="gradient-3">
+        <div id="navbar">
+            <a id="nav-title" href="/">
+                <img src="/static/img/zoes%20cakes/zoes-png.png">
+            </a>
+            <ul id="nav-list">
+                <li><a class="link a-animation" href="/">About</a></li>
+                <li><a class="link a-animation" href="/">Cakes</a></li>
+                <li><a class="link a-animation" href="/">Shop</a></li>
+                <li><a class="link a-animation" href="/">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="landing" class="blend">
+        <section id="landing-content" class="page-padding">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad assumenda at ducimus, est et nostrum obcaecati quasi qui tempora. A architecto assumenda consequatur cum ducimus neque sapiente soluta voluptatem?</p>
+        </section>
+    </div>
+
+
+    <div class="page gradient-3">
+        <div class="page-content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+
+
+</body>
+
+</html>

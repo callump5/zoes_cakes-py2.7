@@ -14,10 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-import views
+
+from .views import get_items
 
 urlpatterns = [
-
-    url(r'^category/(?P<slug>[-\w]+)/$', views.get_items, name='category'),
+    url(r'^category/(?P<slug>[-\w]+)/$', get_items, name='category')
 ]
-

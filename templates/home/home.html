@@ -1,44 +1,22 @@
-{% extends 'index.html' %}
-
+{% extends 'base.html' %}
 
 {% block content %}
 
-    <div class="parallax parallax-1 page">
-        <div class="parallax-content">
-            <h1>Welcome to Zoe's Cakes</h1>
-            <p>Scroll down to find see what mouth watering pasteries lay ahead!</p>
-        </div>
-    </div>
+        <section class="page-padding">
+            <h1 class="page-title">Welcome to Zoe's Cakes</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias commodi dolorem enim et eveniet explicabo fugit in itaque laudantium magnam minima minus modi molestias necessitatibus possimus sapiente, similique ut veritatis!</p>
+        </section>
 
-    <section id="bake-slide" class="gradient-3">
-        <h1 class="section-title">Check Out Our Cakes! </h1>
-        <div>
-            {% for item in category %}
-                <div class="bake-slide">
-                    <img src="{{ item.image.url  }}">
-                    <div>
-                        <a href="category/{{ item.slug }}" class="link">{{ item.name }}</a>
+        <section id="category" class="page-padding">
+            <h1 class="page-title">Check out all the different types of cakes we offer!</h1>
+            <div id="category-images">
+                {% for item in category %}
+                    <div class="category-item">
+                        <img src="{{ item.image.url }}">
+                        <a href="{% url 'category' item.slug %}" class="link">{{ item }}</a>
                     </div>
-                </div>
-            {% endfor %}
-        </div>
-    </section>
-
-
-    <section class="parallax parallax-2">
-        <div id="recent-posts">
-            {% for post in posts  %}
-                <article class="col-sm-6 blog-post ">
-                    <div class="blend">
-                        <img class="blog-post-img" src="{{ post.image.url }}">
-                        <div class="blog-post-content">
-                            <h1 class="blog-post-title">{{ post.title }}</h1>
-                            <p>{{ post.post }}</p>
-                        </div>
-                    </div>
-                </article>
-            {% endfor %}
-        </div>
-    </section>
+                {% endfor %}
+            </div>
+        </section>
 
 {% endblock %}
