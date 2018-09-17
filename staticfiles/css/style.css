@@ -92,7 +92,8 @@
         z-index: 100;
         color: #000000;
         background-color: transparent;
-}
+        padding-left: 18px;
+    }
 
     #navbar {
         width: var(--nav-width);
