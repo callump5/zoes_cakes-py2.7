@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
-import home.upload_to_aws
+import items.upload_to_aws
 
 
 class Migration(migrations.Migration):
@@ -22,11 +22,11 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='category',
             name='image',
-            field=models.ImageField(null='True', upload_to=home.upload_to_aws.upload_img),
+            field=models.ImageField(null='True', upload_to=items.upload_to_aws.upload_img),
         ),
         migrations.AlterField(
             model_name='item',
             name='image',
-            field=models.ImageField(null='True', upload_to=home.upload_to_aws.upload_img),
+            field=models.ImageField(null='True', upload_to=items.upload_to_aws.upload_img),
         ),
     ]

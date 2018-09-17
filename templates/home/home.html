@@ -2,16 +2,21 @@
 
 {% block content %}
 
+
         <section class="page-padding">
-            <h1 class="page-title">Welcome to Zoe's Cakes</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias commodi dolorem enim et eveniet explicabo fugit in itaque laudantium magnam minima minus modi molestias necessitatibus possimus sapiente, similique ut veritatis!</p>
+        {% autoescape off %}
+
+            <p>{{ home_text.text }}</p>
+
+        {% endautoescape %}
+
         </section>
 
-        <section id="category" class="page-padding gray">
-            <h1 class="page-title">Check out all the different types of cakes we offer!</h1>
-            <div class="category-images">
+        <section id="category" class="page-padding gray page-flex-column">
+            <h1 class="my-page-title">Check out all the different types of cakes we offer!</h1>
+            <div class="category-images page-flex-row">
                 {% for item in category %}
-                    <div class="category-item">
+                    <div class="category-item page-flex-column">
                         <img src="{{ item.image.url }}">
                         <a href="{% url 'category' item.slug %}" class="link">{{ item }}</a>
                     </div>

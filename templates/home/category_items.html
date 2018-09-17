@@ -6,12 +6,15 @@
     <section>
         <article class="page-padding">
             <h1 class="slug page-title">{{ category }}</h1>
-            <p>{{ category.description }}</p>
+
+            {% autoescape off %}
+                <p>{{ category.description }}</p>
+            {% endautoescape %}
         </article>
 
-        <div class='category-images page-padding gray'>
+        <div class='category-images page-padding gray page-flex-row'>
             {% for item in items %}
-                <div class="category-item">
+                <div class="category-item page-flex-column">
                     <img src="{{ item.image.url }}">
                     <a href="{% url 'items' item.pk %}" class="link">{{ item }}</a>
                 </div>
