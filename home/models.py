@@ -9,6 +9,7 @@ from upload_to_aws import upload_img
 class Category(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100)
+    description = models.TextField()
     image = models.ImageField(upload_to=upload_img, null='True')
 
     def __unicode__(self):

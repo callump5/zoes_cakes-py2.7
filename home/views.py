@@ -11,5 +11,6 @@ def get_home(request):
 
 def get_items(request, slug):
     items = Item.objects.filter(category__slug__contains=slug)
+    category = Category.objects.get(name__contains=slug)
     return render(request, 'home/category_items.html', {'items': items,
-                                                        'slug': slug})
+                                                        'category': category})
