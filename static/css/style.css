@@ -91,6 +91,7 @@
         justify-content: space-between;
         z-index: 100;
         color: #000000;
+        background-color: transparent;
 }
 
     #navbar {
@@ -133,6 +134,9 @@
     body {
         overflow-x: hidden;
     }
+    html {
+        height: fit-content;
+    }
 
     #landing {
         min-height: var(--page-height);
@@ -167,7 +171,7 @@
 /* - Page */
 
     .page {
-        height: 100vh;
+        min-height: 100vh;
         width: 100vw;
 
         display: flex;
@@ -180,7 +184,6 @@
         height: 100%;
 
         margin: 0 auto;
-        padding: 20px 0;
 
         background-color: white;
     }
@@ -191,7 +194,7 @@
     }
 
     .page-padding {
-        padding: 20px 30px;
+        padding: 40px 30px;
     }
 
     .blend {
@@ -200,7 +203,7 @@
     }
 
     .gray {
-        background-color: rgba(240, 240, 240, 0.58);
+        background-color: rgba(209, 209, 209, 0.58);
     }
 
     .slug:first-letter {
@@ -209,10 +212,6 @@
 
 
 /* 5 - Sections */
-
-    .section {
-        padding: 10px 0;
-    }
 
     .section-title {
         margin: 20px 0 ;
@@ -287,7 +286,8 @@
         text-decoration: none;
     }
 
-    a {
+    a:hover {
+        text-decoration: none;
     }
 
     .link{

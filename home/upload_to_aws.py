@@ -7,3 +7,4 @@ def upload_img(instance, filename):
         now().strftime("%Y%m%d%H%M%S"),
         filename_ext.lower(),
     )
+
