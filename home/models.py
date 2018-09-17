@@ -18,6 +18,7 @@ class Category(models.Model):
 class Item(models.Model):
     name = models.CharField(max_length=100)
     category = models.ForeignKey(Category, related_name='itemCategory')
+    slug = models.SlugField(max_length=100)
     description = models.TextField()
     image = models.ImageField(upload_to=upload_img, null='True')
 

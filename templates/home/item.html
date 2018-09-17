@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+    <section>
+
+        <div class='category-images page-padding gray'>
+                <article class="single-item">
+                    <img src="{{ item.image.url }}">
+                    <div class="item-text">
+                        <h1 class="page-title">{{ item.name }}</h1>
+                        <p>{{ item.description }}</p>
+                    </div>
+                </article>
+        </div>
+    </section>
+
+{% endblock %}

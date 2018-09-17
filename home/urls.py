@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 
-from .views import get_items
+from .views import get_items, get_cat_items
 
 urlpatterns = [
-    url(r'^category/(?P<slug>[-\w]+)/$', get_items, name='category')
+    url(r'^category/(?P<slug>[-\w]+)/$', get_items, name='category'),
+    url(r'^category/item/(?P<pk>\d+)/$', get_cat_items, name='items'),
 ]

@@ -14,3 +14,6 @@ def get_items(request, slug):
     category = Category.objects.get(slug__exact=slug)
     return render(request, 'home/category_items.html', {'items': items,
                                                         'category': category})
+def get_cat_items(request, pk):
+    item = Item.objects.get(pk=pk)
+    return render(request, 'home/item.html', {'item': item})

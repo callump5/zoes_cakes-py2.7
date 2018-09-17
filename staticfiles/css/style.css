@@ -263,6 +263,25 @@
 }
 
 
+/* - Single Post */
+
+.single-item {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+}
+.single-item img {
+    height: 250px;
+    width: 250px;
+    margin-right: 25px;
+}
+
+.item-text {
+    display: flex;
+    flex-direction: column;
+}
+
 
 /*   - Link Animation */
 
