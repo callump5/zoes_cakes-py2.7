@@ -21,8 +21,12 @@ def get_home(request):
 def get_items(request, slug):
     items = Item.objects.filter(category__slug__contains=slug)
     category = Category.objects.get(slug__exact=slug)
+    landing_text = LandingText.objects.all()
     return render(request, 'home/category_items.html', {'items': items,
-                                                        'category': category})
+                                                        'category': category,
+                                                        'landing_text':landing_text})
 def get_cat_items(request, pk):
     item = Item.objects.get(pk=pk)
-    return render(request, 'home/item.html', {'item': item})
+    landing_text = LandingText.objects.all()
+    return render(request, 'home/item.html', {'item': item,
+                                              'landing_text': landing_text})
