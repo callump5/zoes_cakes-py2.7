@@ -39,9 +39,13 @@
                 <section id="landing-content" class="page-padding page-flex-column">
 
                     <h1 class="my-page-title">Welcome to Zoe's Cakes</h1>
-                    {% autoescape off %}
-                        <p>{{ landing_text.text }}</p>
-                    {% endautoescape %}
+                    {% for item in landing_text %}
+
+                        {% autoescape off %}
+                            <p>{{ item.text }}</p>
+                        {% endautoescape %}
+
+                    {% endfor %}
                 </section>
             </div>
 

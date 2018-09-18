@@ -4,11 +4,15 @@
 
 
         <section class="page-padding">
-        {% autoescape off %}
 
-            <p>{{ home_text.text }}</p>
+        {% for item in home_text %}
+            {% autoescape off %}
 
-        {% endautoescape %}
+                <p>{{ item.text }}</p>
+
+            {% endautoescape %}
+        {% endfor %}
+
 
         </section>
 

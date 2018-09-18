@@ -8,9 +8,9 @@ from items.models import Category, Item
 # Create your views here.
 
 def get_home(request):
-    landing_text = LandingText.objects.get(pk=1)
-    home_text = HomeText.objects.get(pk=1)
-    contact = ContactDetails.objects.get(pk=1)
+    landing_text = LandingText.objects.all()
+    home_text = HomeText.objects.all()
+    contact = ContactDetails.objects.all()
 
     category = Category.objects.all()
     return render(request, 'home/home.html', {'landing_text':landing_text,
