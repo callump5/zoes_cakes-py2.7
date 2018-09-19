@@ -35,12 +35,18 @@ def get_cat_items(request, pk):
 
 def get_about(request):
     about = AboutPage.objects.all()
-    return render(request, 'about/about.html', {'about': about})
+    landing_text = LandingText.objects.all()
+    return render(request, 'about/about.html', {'about': about,
+                                              'landing_text': landing_text})
 
 def get_gallery(request):
     items = Item.objects.all()
-    return render(request, 'gallery/gallery.html', {'items': items})
+    landing_text = LandingText.objects.all()
+    return render(request, 'gallery/gallery.html', {'items': items,
+                                              'landing_text': landing_text})
 
 def get_contact(request):
     contact = ContactDetails.objects.all()
-    return render(request, 'contact/contact.html', {'contact': contact})
+    landing_text = LandingText.objects.all()
+    return render(request, 'contact/contact.html', {'contact': contact,
+                                              'landing_text': landing_text})
