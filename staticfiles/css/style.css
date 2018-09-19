@@ -15,7 +15,7 @@
     :root{
         --nav-padding: 15px;
         --page-width: 80%;
-        --page-height: calc(75vh - 100px);
+        --page-height: calc(100vh - (70vh + 115px));
         --theme-color-1: #90c5f0;
         --font-s: 26px;
         --section-color-1: rgba(188, 236, 255, 0.31);
@@ -124,7 +124,6 @@
     }
 
     .page {
-        min-height: 100vh;
         width: 100vw;
     }
 
@@ -200,7 +199,6 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-
     }
 
     .category-item:hover{
@@ -222,6 +220,15 @@
     }
 
 
+    .fill-page {
+        min-height: var(--page-height);
+        background-color: white;
+    }
+
+    #contact {
+        justify-content: space-between;
+        align-items: center;
+    }
 
     .blend {
         background-color: var(--blend-color);

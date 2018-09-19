@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+ {% block content %}
+
+
+    <section class="gray page-padding">
+        <h1 class="my-page-title">Check out all the different bakes we offer!</h1>
+        <div class='category-images  page-flex-row'>
+            {% for item in items %}
+                <div class="category-item page-flex-column">
+                    <img src="{{ item.image.url }}">
+                    <a href="{% url 'items' item.pk %}" class="link">{{ item }}</a>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+ {% endblock %}

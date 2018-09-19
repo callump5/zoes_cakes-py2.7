@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+
+ {% block content %}
+
+
+    <section class="page-padding fill-page">
+
+    <h1 class="my-page-title">About Zoe's Cakes</h1>
+
+        {% for item in about %}
+            {% autoescape off %}
+
+            <p>{{ item.text }}</p>
+            {% endautoescape %}
+
+        {% endfor %}
+    </section>
+
+ {% endblock %}

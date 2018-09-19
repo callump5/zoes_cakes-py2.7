@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+ {% block content %}
+    <section class="fill-page page-padding">
+        <h1 class="my-page-title">Contact Details</h1>
+        <div class="page-flex-row" id="contact">
+            {% for item in contact %}
+                {% autoescape off %}
+
+                <p>{{ item.name }}</p>
+                <p>{{ item.number }}</p>
+                <p>{{ item.email }}</p>
+                {% endautoescape %}
+            {% endfor %}
+        </div>
+    </section>
+ {% endblock %}
