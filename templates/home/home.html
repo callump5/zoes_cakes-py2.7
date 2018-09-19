@@ -18,7 +18,14 @@
         </section>
 
         <section id="category" class="page-padding gray page-flex-column">
-            <h1 class="my-page-title">Check out all the different types of cakes we offer!</h1>
+        {% for item in cat_header %}
+            {% autoescape off %}
+
+                <h1 class="my-page-title">{{ item.text }}</h1>
+
+            {% endautoescape %}
+        {% endfor %}
+
             <div class="category-images page-flex-row">
                 {% for item in category %}
                     <div class="category-item page-flex-column">

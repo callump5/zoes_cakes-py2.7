@@ -8,6 +8,12 @@ from tinymce.models import HTMLField
 
 # Create your models here.
 
+class CategoryHeader(models.Model):
+    text = HTMLField()
+
+    def __unicode__(self):
+        return 'Category Header'
+
 class LandingText(models.Model):
     text = HTMLField()
 

@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 
-from . models import HomeText, ContactDetails, LandingText, AboutPage
+from . models import HomeText, ContactDetails, LandingText, AboutPage, CategoryHeader
 from items.models import Category, Item
 # Create your views here.
 
@@ -11,12 +11,13 @@ def get_home(request):
     landing_text = LandingText.objects.all()
     home_text = HomeText.objects.all()
     contact = ContactDetails.objects.all()
-
+    cat_header = CategoryHeader.objects.all()
     category = Category.objects.all()
     return render(request, 'home/home.html', {'landing_text':landing_text,
                                               'home_text': home_text,
                                               'contact': contact,
-                                              'category': category})
+                                              'cat_header': cat_header,
+                                              'category': category,})
 
 def get_items(request, slug):
     items = Item.objects.filter(category__slug__contains=slug)
